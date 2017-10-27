@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: dive_team_rep_roduction
+  database: dive_team_rep_production
   username: diveteam
   password: <%= ENV['DIVETEAM_DATABASE_PASSWORD'] %>
