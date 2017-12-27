@@ -1,0 +1,29 @@
+.user_header {
+  margin-bottom: 10px;
+  height: 40px;
+  border-bottom: 1px solid #e4e6e8;
+  white-space: nowrap;
+}
+
+.userlist_boxtable {
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 60px;
+  padding: 5px;
+}
+
+.userlist_boxavatar {
+  float: left;
+  max-width: 48px;
+  max-height: 48px;
+  margin: 7px;
+}
+
+.userlist_boxcontent {
+  padding: 5px;
+}
+
+.userlist_boxend {
+  clear: both;
+  padding-left: 62px;
+}
