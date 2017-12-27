@@ -1,2 +1,21 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div class="container">
+  <div class="user_header">
+    <h1>全ユーザー一覧</h1>
+  </div>
+  <div class="row">
+    <% @users.each do |user| %>
+      <div class="userlist_boxtable col-md-3 col-sm-4 col-xs-6 ">
+        <div class="userlist_boxavatar">
+          <%= profile_img(user) %>
+        </div>
+        <div class="userlist_boxcontent">
+          <%= user.name %>
+          <p>貢献度</p>
+        </div>
+        <div class="userlist_boxend">
+          ユーザーtag作るか不明
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
