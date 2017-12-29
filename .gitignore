@@ -14,4 +14,4 @@
 
 #dotenv-rails
 .env
-vender/bundle
+vendor/bundle
