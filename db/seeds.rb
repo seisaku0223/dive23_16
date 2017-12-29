@@ -6,16 +6,22 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-10.times do |n|
-  User.create!(name: Faker::Vehicle.vin,
-               email: Faker::Internet.email,
-               password: "199392199392",
-              )
-end
+# 10.times do |n|
+#   User.create!(name: Faker::Vehicle.vin,
+#                email: Faker::Internet.email,
+#                password: "199392199392",
+#               )
+# end
+#
+# 10.times do |note|
+#   Question.create!( title: Faker::Vehicle.vin,
+#                     content: Faker::Vehicle.manufacture,
+#                     user_id: User.last.id,
+#                     )
+# end
 
-10.times do |note|
-  Question.create!( title: Faker::Vehicle.vin,
-                    content: Faker::Vehicle.manufacture,
-                    user_id: User.last.id,
-                    )
+require "csv"
+
+CSV.read('db/stackoverflow_tags.csv') do |row|
+　Tag.create(:name => row[0], :description => row[1])
 end
