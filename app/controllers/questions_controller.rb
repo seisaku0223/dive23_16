@@ -6,12 +6,6 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    require "csv"
-    CSV.read('db/stackoverflow_tags.csv').each do |row|
-      puts "test"
-      ActsAsTaggableOn::Tag.create(:name => row[0], :description => row[1])
-      binding.pry
-    end
     @questions = Question.all
   end
 
