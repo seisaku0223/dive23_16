@@ -19,3 +19,10 @@ end
                     user_id: User.last.id,
                     )
 end
+
+##stackoverflow_tags.csvをdbにインポート
+# require "csv"
+#
+# CSV.read('/stackoverflow_tags.csv').each do |row|
+#   ActsAsTaggableOn::Tag.create(:name => row[0], :description => row[1])
+# end
