@@ -22,6 +22,6 @@
 
 require "csv"
 
-CSV.read('db/stackoverflow_tags.csv') do |row|
-　Tag.create(:name => row[0], :description => row[1])
+CSV.read('/stackoverflow_tags.csv').each do |row|
+  ActsAsTaggableOn::Tag.create(:name => row[0], :description => row[1])
 end
