@@ -6,10 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create!(name: Faker::Vehicle.vin,
-             email: Faker::Internet.email,
-             password: "199392199392"
-            )
+10.times do |n|
+  User.create!(name: Faker::Vehicle.vin,
+               email: Faker::Internet.email,
+               password: "199392199392",
+              )
+end
 
 10.times do |note|
   Question.create!( title: Faker::Vehicle.vin,
