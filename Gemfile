@@ -16,6 +16,7 @@ gem 'ransack'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'rails_12factor', group: :production
+gem 'acts-as-taggable-on', '~> 4.0'
 
 group :development, :test do
   gem 'byebug'
