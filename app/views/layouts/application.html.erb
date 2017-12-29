@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
   <nav class="navbar navbar-default">
@@ -23,7 +24,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/questions">質問 <span class="sr-only">(current)</span></a></li>
+          <li><a href="/questions">質問 <span class="sr-only">(current)</span></a></li>
           <li><a href="#">タグ</a></li>
           <li><a href="#">ユーザー</a></li>
         </ul>
