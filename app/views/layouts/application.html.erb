@@ -24,9 +24,9 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="/questions">質問 <span class="sr-only">(current)</span></a></li>
+          <li><%= link_to "質問", questions_path %></li>
           <li><a href="#">タグ</a></li>
-          <li><a href="#">ユーザー</a></li>
+          <li><%= link_to "ユーザー", users_path %></li>
         </ul>
         <form class="navbar-form navbar-left">
           <div class="form-group">
@@ -41,12 +41,11 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-
+  <div class="container">
 <%= yield %>
+  </div>
   <footer class="footer">
-    <div class="container">
-      <p class="text-muted">dive23-16</p>
-    </div>
+    <p class="text-muted">dive23-16</p>
   </footer>
 </body>
 </html>
