@@ -1,36 +1,72 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Questions</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Created_by</th>
-      <th>Created_at</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="content clearfix">
+  <div class="mainbar">
+    <div class="subheader">
+      <h1>質問一覧</h1>
+    </div>
     <% @questions.each do |question| %>
-      <tr>
-        <td><%= question.title %></td>
-        <td><%= question.content %></td>
-        <td><%= question.user.name %></td>
-        <td><%= render 'tag_list', tag_list: question.tag_list %></td>
-        <td><%= question.created_at.strftime("%y/%m/%d %p %l:%M")%></td>
-        <td><%= link_to 'Show', question %></td>
-        <% if user_signed_in? and current_user.id == question.user_id %>
-          <td><%= link_to 'Edit', edit_question_path(question) %></td>
-          <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
+      <div class="qlist-wrapper">
+        <div class="question-summary clearfix">
+          <div class="cp clearfix">
+            <div class="votes">
+              <div class="mini-counts">
+                <span>1</span>
+              </div>
+              <div>票</div>
+            </div>
+            <div class="answered">
+              <div class="mini-counts">
+                <span>11</span>
+              </div>
+              <div>回答</div>
+            </div>
+            <div class="views">
+              <div class="mini-counts">
+                <span>23</span>
+              </div>
+              <div>閲覧数</div>
+            </div>
+          </div>
+          <div class="summary clearfix">
+            <h3>
+              <a class="question-hyperlink"><%= link_to "#{question.content}", question_path(question.id) %></a>
+            </h3>
+            <div class="tags">
+              <!--  タグエリア -->
+              <a href="#" class="post-tag">ruby</a>
+            </div>
+            <div class="questions-info">
+              <!-- 投稿日等 -->
+              <%= question.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Question', new_question_path %>
+  </div>
+  <div class="sidebar">
+    <div class="aside-btn-area">
+      <%= link_to "質問する", new_question_path, class: "btn btn-primary"%>
+    </div>
+    <div class="statistics">
+      <h4>サイト統計情報</h4>
+      <table>
+        <tr>
+          <td class="stats-value"><%= @questions.count %></td>
+          <td class="stats-label">質問</td>
+        </tr>
+        <tr>
+          <td class="stats-value">0 <!-- answerインスタンスから取得 --> </td>
+          <td class="stats-label">回答</td>
+        </tr>
+        <tr>
+          <td class="stats-value">0% <!-- answerインスタンスから取得 --></td>
+          <td class="stats-label">回答済</td>
+        </tr>
+        <tr>
+          <td class="stats-value">1人 <!-- userインスタンスから取得 --></td>
+          <td class="stats-label">ユーザー</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

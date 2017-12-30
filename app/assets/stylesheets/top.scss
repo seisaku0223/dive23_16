@@ -2,6 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// html {
+//   height: 100%;
+// }
+//
+// body {
+//   height: 100%;
+// }
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px;
+}
+
 .navbar {
   border-top-width: 3px;
   border-top-style: solid;
@@ -10,6 +26,8 @@
   z-index: 1050;
   background-color: #fafafa;
 }
+
+
 
 @media (max-width: 991px) {
     .navbar-header {
@@ -52,6 +70,19 @@
   background-color: #D3D3D3;
 }
 
+.clearfix:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.content {
+  box-sizing: content-box;
+  width: 1060px;
+  background-color: #FFF;
+  padding: 30px 50px;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -59,11 +90,6 @@
   height: 60px;
   background-color: #242729;
   text-align: center;
-}
-
-.footer > .container {
-  padding-right: 15px;
-  padding-left: 15px;
 }
 
 .text-muted {
