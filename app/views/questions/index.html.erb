@@ -19,6 +19,7 @@
         <td><%= question.title %></td>
         <td><%= question.content %></td>
         <td><%= question.user.name %></td>
+        <td><%= render 'tag_list', tag_list: question.tag_list %></td>
         <td><%= question.created_at.strftime("%y/%m/%d %p %l:%M")%></td>
         <td><%= link_to 'Show', question %></td>
         <% if user_signed_in? and current_user.id == question.user_id %>
