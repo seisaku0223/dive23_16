@@ -29,7 +29,7 @@
             </div>
             <div class="summary clearfix">
               <h3>
-                <a href="#" class="question-hyperlink"><%= "#{question.content} "%></a>
+                <a class="question-hyperlink"><%= link_to "#{question.content}", question_path(question.id) %></a>
               </h3>
               <div class="tags">
                 <!--  タグエリア -->
@@ -52,20 +52,20 @@
         <h4>サイト統計情報</h4>
         <table>
           <tr>
-            <td><%= @questions.count %></td>
-            <td>質問</td>
+            <td class="stats-value"><%= @questions.count %></td>
+            <td class="stats-label">質問</td>
           </tr>
           <tr>
-            <td>0 <!-- answerインスタンスから取得 --> </td>
-            <td>回答</td>
+            <td class="stats-value">0 <!-- answerインスタンスから取得 --> </td>
+            <td class="stats-label">回答</td>
           </tr>
           <tr>
-            <td>0% <!-- answerインスタンスから取得 --></td>
-            <td>回答済</td>
+            <td class="stats-value">0% <!-- answerインスタンスから取得 --></td>
+            <td class="stats-label">回答済</td>
           </tr>
           <tr>
-            <td>1人 <!-- userインスタンスから取得 --></td>
-            <td>ユーザー</td>
+            <td class="stats-value">1人 <!-- userインスタンスから取得 --></td>
+            <td class="stats-label">ユーザー</td>
           </tr>
         </table>
       </div>
