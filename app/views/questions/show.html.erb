@@ -10,6 +10,8 @@
   <%= @question.content %>
 </p>
 
+<p><%= render 'tag_list', tag_list: @question.tag_list %></p>
+
 <p>
   <strong>Created_by:</strong>
   <%= @question.user.name %>
