@@ -10,11 +10,12 @@
 //   height: 100%;
 // }
 
-body {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
+html {
   position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px;
 }
 
 .navbar {
@@ -80,11 +81,10 @@ body {
   width: 1060px;
   background-color: #FFF;
   padding: 30px 50px;
-  margin-bottom: 80px;
 }
 
 .footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
   height: 60px;
