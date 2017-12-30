@@ -1,29 +1,58 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="contente">
+    <p id="notice"><%= notice %></p>
+      <div class="question-header">
+        <h1>質問タイトル</h1> <!-- questionコントローラーから取得 -->
+        <div class="aside-cta">
+          <%= link_to "質問する", new_question_path,  class: "btn btn-primary" %>
+        </div>
+      </div>
+      <div class="mainbar">
+        <table>
+          <tr>
+            <td class="votecell">
+              <div class="btn btn-default">投票する</div> <!-- 投票機能実装後変更 -->
+              <span class="vote-count-post">0</span>
+            </td>
+            <td>
+              <div class="post-text">
+                <p>sample</p> <!-- questionコントローラーから取得 -->
+              </div>
+              <div class="post-taglist">
+                タグを表示予定
+              </div>
+              <table>
+                <tr>
+                  <td>
+                    <div class="post-menu">
+                      <a href="#">編集</a> <!-- ログインユーザーのみ表示 -->
+                      <a href="#">削除</a> <!-- ログインユーザーのみ表示 -->
+                    </div>
+                  </td>
+                  <td class="post-signature">
+                    <div class="user-info">
+                      <div class="user-action-time">
+                        <p>質問日時</p>
+                        <span>2017年12月30日</span>
+                      </div>
+                      <div class="user-details">
+                        <p>名前</p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
 
-<p>
-  <strong>Title:</strong>
-  <%= @question.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @question.content %>
-</p>
-
-<p><%= render 'tag_list', tag_list: @question.tag_list %></p>
-
-<p>
-  <strong>Created_by:</strong>
-  <%= @question.user.name %>
-</p>
-
-<p>
-  <strong>Created_at:</strong>
-  <%= @question.created_at.strftime("%y/%m/%d %p %l:%M")%>
-</p>
-
-<% if user_signed_in? and current_user.id == @question.user_id %>
-  <%= link_to 'Edit', edit_question_path(@question) %> |
-  <%= link_to 'Destroy', @question, method: :delete, data: { confirm: 'Are you sure?'} %> |
-<% end %>
-<%= link_to 'Back', questions_path %>
+          </tr>
+        </table>
+      </div>
+    <% if user_signed_in? and current_user.id == @question.user_id %>
+      <%= link_to 'Edit', edit_question_path(@question) %> |
+      <%= link_to 'Destroy', @question, method: :delete, data: { confirm: 'Are you sure?'} %> |
+    <% end %>
+    <%= link_to 'Back', questions_path %>
+  </div>
+</div>
