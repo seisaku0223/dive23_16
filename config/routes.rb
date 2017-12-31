@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users, only: [:index, :show]
+  resources :votes, only: [:create, :destroy]
 
   namespace :products do
    resources :tags, param: :tag_name, only: [:index, :show]
