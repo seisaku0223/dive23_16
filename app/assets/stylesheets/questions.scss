@@ -1,3 +1,205 @@
-// Place all the styles related to the questions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.clearfix:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.content {
+  box-sizing: content-box;
+  width: 1060px;
+  background-color: #FFF;
+  padding: 30px 50px;
+}
+
+.mainbar {
+  float: left;
+  width: 728px;
+}
+
+.subheader {
+  height: 40px;
+  border-bottom: 1px solid #e4e6e8;
+}
+
+.subheader h1 {
+  color: #242729;
+  font-size: 18px;
+  line-height: 2;
+  margin-bottom: 0;
+}
+
+.question-summary {
+  padding: 12px 0 10px 0;
+  border-bottom: 1px solid #e4e6e8;
+}
+
+.cp {
+  float: left;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.votes, .answered, .views {
+  float: left;
+  padding: 25px 5px;
+  line-height: 1;
+  display: inline-block;
+  height: 38px;
+  min-width: 38px;
+  margin: 0 3px 0 0;
+  font-size: 11px;
+  color: #848d95;
+  text-align: center;
+}
+
+.mini-counts {
+  margin-bottom: 2px;
+  font-size: 17px;
+  font-weight: 300;
+  color: #6a737c;
+}
+
+.summary {
+  width: 530px;
+  padding: 0 0 0 20px;
+  float: left;
+}
+
+.question-hyperlink {
+  color: #005999;
+}
+
+.question-hyperlink:hover {
+  color: #07c;
+  background-color: #fff;
+}
+
+.tags {
+  line-height: 18px;
+  float: left;
+}
+
+.post-tag {
+  font-size: 12px;
+  color: #39739d;
+  background-color: #E1ECF4;
+  border-color: transparent;
+  position: relative;
+  display: inline-block;
+  padding: 7px 14px;
+  margin: 2px 2px 2px 0;
+  line-height: 1;
+}
+
+.post-tag:hover {
+  color: #39739d;
+  background-color: #e1eff4;
+}
+
+.questions-info {
+  width: auto;
+  padding-top: 4px;
+  float: right;
+}
+
+.sidebar {
+  float: right;
+  width: 300px;
+  padding-top: 10px;
+}
+
+.aside-btn-area {
+  text-align: right;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.statistics {
+  background-color: #fff7e3;
+  padding: 15px 15px 10px 15px;
+  border: 1px solid #E0DCBF;
+  font-size: 14px;
+}
+
+.statistics table {
+  width: 200px;
+}
+
+.stats-value, .stats-label {
+  padding: 5px 10px 5px 0;
+  border-bottom: 1px solid #D5E5EC;
+}
+
+.stats-value {
+  width: 55px;
+  text-align: right;
+}
+
+.stats-label {
+  color: #586E78;
+}
+
+
+// show.html.erb
+
+.question-header {
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 5px 0;
+  border-bottom: 1px solid #e4e6e8;
+  height: 70px;
+  text-align: left;
+}
+
+.question-area {
+  border-bottom: 1px solid #e4e6e8;
+  padding-bottom: 10px;
+}
+
+.question-btn {
+  float: right;
+  margin-right: 50px;
+}
+
+.votecell {
+  float: left;
+}
+
+.vote-count-post {
+  font-size: 15px;
+  border: 2px solid #e4e6e8;
+  padding: 5px;
+  margin-left: 20px;
+}
+
+.edit-delete-btn {
+  float: right;
+}
+
+.post-text {
+  width: 700px;
+  margin: 10px;
+  padding-top: 10px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.post-taglist {
+  float: left;
+}
+
+.user-info {
+  box-sizing: border-box;
+  padding: 5px 6px 7px 7px;
+  width: 200px;
+  color: #6a737c;
+  float: right;
+  background-color: #E0EAF1;
+}
+
+
+.label-key {
+  color: #9199a1;
+  font-size: 14px;
+  margin-bottom: 5px;
+}

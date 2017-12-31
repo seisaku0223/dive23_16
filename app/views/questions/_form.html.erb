@@ -15,10 +15,17 @@
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
+
   <div class="field">
     <%= f.label :content %><br>
     <%= f.text_field :content %>
   </div>
+
+  <div class="field form-group form-group-lg">
+    <%= f.label :tag_list,"タグ"%>
+    <%= text_field_tag 'question[tag_list]', @question.tag_list.join(","), class: "form-control" %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
