@@ -12,6 +12,7 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
+    @vote = current_user.votes.find_by(question_id: @question_id)
   end
 
   # GET /questions/new
