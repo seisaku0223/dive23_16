@@ -18,7 +18,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">stackoverflow</a>
+        <%= link_to "stackoverflow", questions_path, class: "navbar-brand" %>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -35,8 +35,13 @@
           <button type="submit" class="btn btn-default">検索</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">ログイン</a></li>
-          <li><a href="#">新規登録</a></li>
+          <% if user_signed_in? %>
+            <li><%= link_to "マイページ", edit_user_registration_path %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "ログイン", new_user_session_path %></li>
+            <li><%= link_to "サインアップ", new_user_registration_path %></li>
+          <% end %>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
