@@ -9,7 +9,14 @@
     <div class="question-area">
       <div class="clearfix">
         <div class="votecell">
-          <div class="btn btn-default">投票する</div> <!-- 投票機能実装後変更 -->
+          <% unless @question.user == current_user %>
+            <% if @vote.present? %>
+              <%= link_to "投票を取り消す", vote_path(question_id: @question.id), method: :delete, class: "btn btn-default" %>
+            <% else %>
+              <%= link_to "投票する", votes_path(question: @question.id), method: :post, class: "btn btn-default" %>
+            <% end %>
+          <% end %>
+            <!-- <div class="btn btn-default">投票する</div>  -->
           <span class="vote-count-post">0</span>
         </div>
         <div class="edit-delete-btn">
@@ -18,7 +25,7 @@
         </div>
       </div>
       <div class="post-text">
-        <p>sample</p> <!-- questionコントローラーから取得 -->
+        <p><%= @question.content %></p>
       </div>
       <div class="clearfix">
         <div class="post-taglist">
