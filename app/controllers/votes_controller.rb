@@ -1,4 +1,5 @@
 class VotesController < ApplicationController
+  before_action :authenticate_user!
   def create
     vote = current_user.votes.create(question_id: params[:question_id])
     redirect_to questions_url, notice: "#{vote.question.user.name}さんの質問に投票しました"
