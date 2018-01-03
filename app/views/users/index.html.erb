@@ -4,16 +4,16 @@
   </div>
   <div class="row">
     <% @users.each do |user| %>
-      <div class="userlist_boxtable col-md-3 col-sm-4 col-xs-6 ">
+      <div class="userlist_boxtable col-md-3 col-sm-4 col-xs-6">
         <div class="userlist_boxavatar">
           <%= profile_img(user) %>
         </div>
-        <div class="userlist_boxcontent">
-          <%= user.name %>
+        <div class="userlist_boxcontent clearfix">
+          <p><%= link_to user.name, user %></p>
           <p>貢献度</p>
         </div>
         <div class="userlist_boxend">
-          ユーザーtag作るか不明
+          ユーザーtag
         </div>
       </div>
     <% end %>
