@@ -1,32 +1,1 @@
-<%= form_for(@question) do |f| %>
-  <% if @question.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
-
-      <ul>
-      <% @question.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_field :content %>
-  </div>
-
-  <div class="field form-group form-group-lg">
-    <%= f.label :tag_list,"タグ"%>
-    <%= text_field_tag 'question[tag_list]', @question.tag_list.join(","), class: "form-control" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<%= form_for(@question) do |f| %>  <% if @question.errors.any? %>    <div id="error_explanation">      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>      <ul>      <% @question.errors.full_messages.each do |message| %>        <li><%= message %></li>      <% end %>      </ul>    </div>  <% end %>  <div class="field">    <%= f.label :title %><br>    <%= f.text_field :title, placeholder:'プログラミングに関しての質問は何ですか？具体的に書いてください。', class: "form-control" %>  </div>  <div class="field">    <%= f.label :content %><br>    <%= f.text_area :content, class: "form-control" %>  </div>  <div class="field form-group form-group-lg">    <%= f.label :tag_list,"タグ"%>    <%= text_field_tag 'question[tag_list]', @question.tag_list.join(","), class: "form-control" %>  </div>  <div class="actions">    <%= f.submit '投稿する', class: 'btn btn-primary btn-sm' %>  </div><% end %><%= link_to '戻る', questions_path, class: 'btn btn-default btn-sm btn-secondary' %>
