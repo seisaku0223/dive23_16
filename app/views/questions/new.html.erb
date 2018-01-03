@@ -1,5 +1,16 @@
-<h1>New Question</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', questions_path %>
+<div class="content clearfix">
+  <div class="mainbar">
+    <%= render 'form' %>
+  </div>
+  <div class="sidebar">
+    <div class="statistics">
+      <h4>質問するその前に</h4>
+      <p>このサイトはプログラミングに関するQ&Aを対象にしています。</p>
+      <p>単なる議論に終わらず、解決可能な質問を歓迎します。</p>
+      <p>これまでに試したことや調べたことを含め、質問内容を詳しく書くことで回答がつきやすくなります。</p>
+      <p>使い方がわからないなど、このサイトそのものについての質問でしたら、<a href="https://ja.meta.stackoverflow.com/">meta</a>で受け付けています。</p>
+      <p align="right"><%= link_to('ヘルプセンターへ≫','https://ja.stackoverflow.com/help', class: 'other', title: 'サポート') %></p>
+      <p align="right"><%= link_to('質問の手引き≫','https://ja.stackoverflow.com/help/how-to-ask', class: 'other', title: '手引き' ) %></p>
+    </div>
+  </div>
+</div>
