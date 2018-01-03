@@ -27,6 +27,9 @@
             </div>
           </div>
           <div class="summary clearfix">
+            <div class="user_gravatar">
+              <%= profile_img(question.user)%>
+            </div>
             <h3>
               <a class="question-hyperlink"><%= link_to "#{question.title}", question_path(question.id) %></a>
             </h3>
