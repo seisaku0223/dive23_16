@@ -12,8 +12,11 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
-    @question = Question.find(params[:id])
-    @vote = Vote.new()
+    if user_signed_in?
+      @vote = current_user.votes.find_by(question_id: @question.id)
+    else
+      @vote = Vote.new
+    end
   end
 
   # GET /questions/new

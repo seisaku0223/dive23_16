@@ -9,10 +9,12 @@
       <div class="clearfix">
         <div class="votecell">
           <% unless @question.user == current_user %>
-            <% if current_user.already_voted?(@question) %>
-              <%= link_to "投票を取り消す", question_votes_path(@question), method: :delete, class: "btn btn-default" %>
-            <% else %>
-              <%= link_to "投票する", question_votes_path(question_id: @question.id), method: :post, class: "btn btn-default" %>
+            <% if user_signed_in? %>
+              <% if @vote.present? %>
+                <%= link_to "投票を取り消す", question_votes_path(@question), method: :delete, class: "btn btn-default" %>
+              <% else %>
+                <%= link_to "投票する", question_votes_path(question_id: @question.id), method: :post, class: "btn btn-default" %>
+              <% end %>
             <% end %>
           <% end %>
             <!-- <div class="btn btn-default">投票する</div>  -->
