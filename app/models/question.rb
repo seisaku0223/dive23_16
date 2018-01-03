@@ -5,5 +5,5 @@ class Question < ActiveRecord::Base
   acts_as_taggable
 
   validates :title, presence: true, length: { minimum: 1, maximum: 100 }
-  validates :content, presence: true
+  validates :content, presence: true, length: { minimum: 1, maximum: 1000 }
 end
