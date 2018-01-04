@@ -7,6 +7,7 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = Question.page(params[:page]).per(20)
+    @question_count = Question.count
   end
 
   # GET /questions/1
