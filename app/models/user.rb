@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
 
   has_many :questions
-  has_many :votes, dependent: :destroy
+  has_many :votes, foreign_key: 'user_id', dependent: :destroy
   has_many :vote_questions, through: :votes, source: :question
+
+  def already_voted?(question)
+    self.votes.exists?(question_id: question.id)
+  end
 end
