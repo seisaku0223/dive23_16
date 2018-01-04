@@ -9,7 +9,7 @@
           <div class="cp clearfix">
             <div class="votes">
               <div class="mini-counts">
-                <span>1</span>
+                <span>1<!-- @question.votes.count--></span>
               </div>
               <div>票</div>
             </div>
@@ -42,6 +42,7 @@
         </div>
       </div>
     <% end %>
+    <%= paginate @questions %>
   </div>
   <div class="sidebar">
     <div class="aside-btn-area">
@@ -51,7 +52,7 @@
       <h4>サイト統計情報</h4>
       <table>
         <tr>
-          <td class="stats-value"><%= @questions.count %></td>
+          <td class="stats-value"><%= @question_count %></td>
           <td class="stats-label">質問</td>
         </tr>
         <tr>

@@ -17,6 +17,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'rails_12factor', group: :production
 gem 'acts-as-taggable-on', '~> 4.0'
+gem 'kaminari-bootstrap' #ページネーションをBootstrapに対応させるため追加
 
 group :development, :test do
   gem 'byebug'
