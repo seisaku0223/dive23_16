@@ -5,6 +5,7 @@
     <!-- <h1>質問タイトル</h1> questionコントローラーから取得 -->
     <h1><%= @question.title %></h1>
   </div>
+    <%= render 'users/favorite_form', question: @question %>
   <div class="mainbar">
     <div class="question-area">
       <div class="clearfix">
