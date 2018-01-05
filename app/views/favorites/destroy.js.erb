@@ -1,0 +1,1 @@
+$("#favorite_form_"+"<%= @question.id %>").html("<%= escape_javascript(render partial: 'users/favorite_form', locals: { question: @question } ) %>")
