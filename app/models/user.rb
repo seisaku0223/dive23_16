@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :questions
   has_many :votes, foreign_key: 'user_id', dependent: :destroy
   has_many :vote_questions, through: :votes, source: :question
+  has_many :favorites, dependent: :destroy
 
   # def already_voted?(question)
   #   self.votes.exists?(question_id: question.id)
