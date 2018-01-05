@@ -26,4 +26,8 @@ class User < ActiveRecord::Base
   def unfavorite!(specified_question)
     favorites.find_by(question_id: specified_question.id).destroy
   end
+ 
+  # def already_voted?(question)
+  #   self.votes.exists?(question_id: question.id)
+  # end
 end
