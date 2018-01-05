@@ -13,7 +13,7 @@
               )
 end
 
-10.times do |note|
+30.times do |note|
   Question.create!( title: Faker::Vehicle.vin,
                     content: Faker::Vehicle.manufacture,
                     user_id: User.last.id,

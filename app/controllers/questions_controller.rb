@@ -6,12 +6,18 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all
+    @questions = Question.page(params[:page]).per(20)
+    @question_count = Question.count
   end
 
   # GET /questions/1
   # GET /questions/1.json
   def show
+    if user_signed_in?
+      @vote = current_user.votes.find_by(question_id: @question.id)
+    else
+      @vote = Vote.new
+    end
   end
 
   # GET /questions/new
