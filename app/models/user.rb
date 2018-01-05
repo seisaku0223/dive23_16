@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
 
-  has_many :questions
+  has_many :questions, dependent: :destroy
+  has_many :answers, dependent: :destroy
   has_many :votes, foreign_key: 'user_id', dependent: :destroy
   has_many :vote_questions, through: :votes, source: :question
   has_many :favorites, dependent: :destroy
@@ -26,7 +27,7 @@ class User < ActiveRecord::Base
   def unfavorite!(specified_question)
     favorites.find_by(question_id: specified_question.id).destroy
   end
- 
+
   # def already_voted?(question)
   #   self.votes.exists?(question_id: question.id)
   # end
