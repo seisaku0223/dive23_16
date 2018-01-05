@@ -16,17 +16,10 @@
       </div>
       <div class="clearfix">
         <div class="votecell">
+          <%= link_to image_tag('/up-arrow.png'), question_votes_path(question_id: @question.id), method: :post %>
           <span class="vote-count"><%= @question.votes.count %></span>
           <p>投票数</p>
-          <% unless @question.user == current_user %>
-            <% if user_signed_in? %>
-              <% if @vote.present? %>
-                <%= link_to image_tag('/down-arrow.png'), question_votes_path(@question), method: :delete %>
-              <% else %>
-                <%= link_to image_tag('/up-arrow.png'), question_votes_path(question_id: @question.id), method: :post %>
-              <% end %>
-            <% end %>
-          <% end %>
+          <%= link_to image_tag('/down-arrow.png'), question_votes_path(@question), method: :delete %>
         </div>
         <div class="post-text">
           <p><%= @question.content %></p>
@@ -34,7 +27,7 @@
       </div>
       <div class="clearfix">
         <div class="post-taglist">
-          <p><%= render 'tag_list', tag_list: @question.tag_list %></p>
+          
         </div>
         <div class="user-info clearfix">
           <div class="user-profile-img"><%= link_to profile_img(@question.user), user_path(@question.user.id) %></div>
