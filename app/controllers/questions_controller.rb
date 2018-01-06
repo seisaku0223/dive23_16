@@ -13,6 +13,8 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
+    @answer = @question.answers.build
+    @answers = @question.answers
     if user_signed_in?
       @vote = current_user.votes.find_by(question_id: @question.id)
     else
