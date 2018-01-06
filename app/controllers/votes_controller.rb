@@ -11,7 +11,7 @@ class VotesController < ApplicationController
     if @vote.save
       redirect_to question_path(@question)
     else
-      redirect_to question_path(@question), notice: '同じ質問に２回答票することはできません'
+      redirect_to question_path(@question), notice: '同じ質問に２回投票することはできません'
     end
   end
 
