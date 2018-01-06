@@ -1,5 +1,4 @@
 <div class="content">
-  <p id="notice"><%= notice %></p>
   <div class="question-header">
     <div><%= link_to "質問する", new_question_path,  class: "btn btn-primary question-btn" %></div>
     <!-- <h1>質問タイトル</h1> questionコントローラーから取得 -->
@@ -30,7 +29,7 @@
       </div>
       <div class="clearfix">
         <div class="post-taglist">
-          
+
         </div>
         <div class="user-info clearfix">
           <div class="user-profile-img"><%= link_to profile_img(@question.user), user_path(@question.user.id) %></div>
