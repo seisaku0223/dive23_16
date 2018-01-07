@@ -9,6 +9,7 @@ class QuestionsController < ApplicationController
     @questions = Question.page(params[:page]).per(20)
     @question_count = Question.count
     @user_count = User.count
+    @top_questions = Question.top5
   end
 
   # GET /questions/1
@@ -81,4 +82,5 @@ class QuestionsController < ApplicationController
     def question_params
       params.require(:question).permit(:title, :content, :user_name, :tag_list)
     end
+
 end

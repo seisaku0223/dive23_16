@@ -74,36 +74,14 @@
     </div>
     <div class="vote-ranking">
       <h4>投票数ランキング</h4>
-      <!-- < @top_questions.each do |question| >
+      <% @top_questions.each do |question| %>
         <table>
           <tr>
-            <td>< question.rank ></td>
-            <td>< question.title ></td>
+            <td class="rank"><%= question.rank %>位</td>
+            <td class="top-questions"><%= question.title %></td>
           </tr>
         </table>
-      < end > -->
-      <table>
-        <tr>
-          <td class="rank">1位</td>
-          <td class="top-questions">ああああ</td>
-        </tr>
-        <tr>
-          <td class="rank">2位</td>
-          <td class="top-questions">いいいい</td>
-        </tr>
-        <tr>
-          <td class="rank">3位</td>
-          <td class="top-questions">うううう</td>
-        </tr>
-        <tr>
-          <td class="rank">4位</td>
-          <td class="top-questions">ええええ</td>
-        </tr>
-        <tr>
-          <td class="rank">5位</td>
-          <td class="top-questions">おおおお</td>
-        </tr>
-      </table>
+      <% end %>
     </div>
   </div>
 </div>
