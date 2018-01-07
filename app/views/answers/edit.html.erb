@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+      <% if @answer.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= @answer.errors.count %>件のエラーがあります。</h2>
+
+          <ul>
+          <% @answer.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <%= render partial: 'answers/form', locals: { answer: @answer, question: @question } %>
+    </div>
+  </div>
