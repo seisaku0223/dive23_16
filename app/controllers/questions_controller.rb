@@ -8,11 +8,13 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.page(params[:page]).per(20)
     @question_count = Question.count
+    @user_count = User.count
   end
 
   # GET /questions/1
   # GET /questions/1.json
   def show
+    # 閲覧される度に閲覧カラムに＋１する
     if user_signed_in?
       @vote = current_user.votes.find_by(question_id: @question.id)
     else

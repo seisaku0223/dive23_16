@@ -67,8 +67,41 @@
           <td class="stats-label">回答済</td>
         </tr>
         <tr>
-          <td class="stats-value">1人 <!-- userインスタンスから取得 --></td>
+          <td class="stats-value"><%= @user_count %>人</td>
           <td class="stats-label">ユーザー</td>
+        </tr>
+      </table>
+    </div>
+    <div class="vote-ranking">
+      <h4>投票数ランキング</h4>
+      <!-- < @top_questions.each do |question| >
+        <table>
+          <tr>
+            <td>< question.rank ></td>
+            <td>< question.title ></td>
+          </tr>
+        </table>
+      < end > -->
+      <table>
+        <tr>
+          <td class="rank">1位</td>
+          <td class="top-questions">ああああ</td>
+        </tr>
+        <tr>
+          <td class="rank">2位</td>
+          <td class="top-questions">いいいい</td>
+        </tr>
+        <tr>
+          <td class="rank">3位</td>
+          <td class="top-questions">うううう</td>
+        </tr>
+        <tr>
+          <td class="rank">4位</td>
+          <td class="top-questions">ええええ</td>
+        </tr>
+        <tr>
+          <td class="rank">5位</td>
+          <td class="top-questions">おおおお</td>
         </tr>
       </table>
     </div>
