@@ -37,11 +37,15 @@
         </div>
       </div>
     </div>
-    <% if user_signed_in? %>
-      ここに回答一覧と作成機能を搭載していく
-    <% end %>    
+    <div class="answer-area">
+      <div id="answer_area">
+        <%= render partial: 'answers/index', locals: { answers: @answers, question: @question } %>
+      </div>
+      <% if user_signed_in? %>
+        <%= render partial: 'answers/form', locals: { answer: @answer, question: @question } %>
+      <% end %>
+    </div>
   </div>
-
   <div class="sidebar">
     <table class="question-info">
       <tr>
