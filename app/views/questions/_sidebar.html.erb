@@ -1,0 +1,26 @@
+<div class="sidebar">
+  <div class="aside-btn-area">
+    <%= link_to "質問する", new_question_path, class: "btn btn-primary"%>
+  </div>
+  <div class="statistics">
+    <h4>サイト統計情報</h4>
+    <table>
+      <tr>
+        <td class="stats-value"><%= Question.count %></td>
+        <td class="stats-label">質問</td>
+      </tr>
+      <tr>
+        <td class="stats-value">0 <!-- answerインスタンスから取得 --> </td>
+        <td class="stats-label">回答</td>
+      </tr>
+      <tr>
+        <td class="stats-value">0% <!-- answerインスタンスから取得 --></td>
+        <td class="stats-label">回答済</td>
+      </tr>
+      <tr>
+        <td class="stats-value"><%= User.count %>人</td>
+        <td class="stats-label">ユーザー</td>
+      </tr>
+    </table>
+  </div>
+</div>

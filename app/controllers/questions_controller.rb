@@ -7,9 +7,6 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = Question.page(params[:page]).per(20)
-    @question_count = Question.count
-    @user_count = User.count
-    @top_questions = Question.top5
   end
 
   # GET /questions/1
@@ -70,6 +67,11 @@ class QuestionsController < ApplicationController
       format.html { redirect_to questions_url, notice: 'Question was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def ranking
+    @questions_rank = Question.rank
+    @questions = Question.page(params[:page]).per(20)
   end
 
   private

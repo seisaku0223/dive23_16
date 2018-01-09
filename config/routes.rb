@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :questions do
     resource :votes, only: [:create, :destroy]
   end
+  get '/ranking', to: 'questions#ranking'
+
   devise_for :users
 
   resources :users, only: [:index, :show]

@@ -25,7 +25,11 @@
   color: #242729;
   font-size: 18px;
   line-height: 2;
-  margin-bottom: 0;
+  display: inline;
+}
+
+.tabs {
+  float: right;
 }
 
 .question-summary {
