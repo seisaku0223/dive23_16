@@ -12,7 +12,8 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
-    # 閲覧される度に閲覧カラムに＋１する
+    @answer = @question.answers.build
+    @answers = @question.answers
     if user_signed_in?
       @vote = current_user.votes.find_by(question_id: @question.id)
     else

@@ -6,6 +6,7 @@ class Question < ActiveRecord::Base
   has_many :favorites, dependent: :destroy
   has_many :favorite_users, through: :favorites, source: :user
   acts_as_taggable
+  has_many :answers, dependent: :destroy
 
   validates :title, presence: true, length: { minimum: 1, maximum: 100 }
   validates :content, presence: true, length: { minimum: 1, maximum: 1000 }

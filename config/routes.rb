@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :questions do
     resource :votes, only: [:create, :destroy]
+    resources :answers
   end
   get '/ranking', to: 'questions#ranking'
 

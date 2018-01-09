@@ -37,8 +37,15 @@
         </div>
       </div>
     </div>
+    <div class="answer-area">
+      <div id="answer_area">
+        <%= render partial: 'answers/index', locals: { answers: @answers, question: @question } %>
+      </div>
+      <% if user_signed_in? %>
+        <%= render partial: 'answers/form', locals: { answer: @answer, question: @question } %>
+      <% end %>
+    </div>
   </div>
-
   <div class="sidebar">
     <table class="question-info">
       <tr>

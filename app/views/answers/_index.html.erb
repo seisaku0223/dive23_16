@@ -1,0 +1,26 @@
+<ul>
+  <% answers.each do |answer| %>
+    <% unless answer.id.nil? %>
+      <div class="answer-summary clearfix">
+        <div class="clearfix">
+          <div class="post-text">
+            <p class="left"><%= answer.content %></p>
+          </div>
+        </div>
+        <div class="clearfix">
+          <div class="edit-delete-btn">
+            <% if user_signed_in? and current_user.id == answer.user_id %>
+              <%= link_to '編集', edit_question_answer_path(question,answer), class: 'btn btn-default btn-sm' %>
+              <%= link_to '削除', question_answer_path(question,answer), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+            <% end %>
+          </div>
+          <div class="user-info clearfix">
+            <p>回答日時：<%= answer.created_at.strftime("%Y年%m月%d日 %H時%M分") %></p>
+            <div class="user-profile-img"><%= link_to profile_img(answer.user), user_path(answer.user.id) %></div>
+            <div class="user-name"><%= link_to answer.user.name, user_path(answer.user.id) %></div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</ul>
