@@ -1,6 +1,6 @@
 <div class="content clearfix">
   <div class="mainbar clearfix">
-    <%= render :partial => "subheader" %>
+    <%= render "subheader" %>
     <% @questions_rank.each do |question| %>
       <div class="qlist-wrapper">
         <div class="question-summary clearfix">
@@ -45,5 +45,5 @@
     <% end %>
     <%= paginate @questions %>
   </div>
-  <%= render :partial => "sidebar" %>
+  <%= render "sidebar" %>
 </div>

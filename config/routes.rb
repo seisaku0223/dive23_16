@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   root "questions#index"
 
+  devise_for :users
+
   resources :questions do
     resource :votes, only: [:create, :destroy]
     resources :answers
   end
-  get '/ranking', to: 'questions#ranking'
 
-  devise_for :users
+  get '/ranking', to: 'questions#ranking'
 
   resources :users, only: [:index, :show]
   resources :favorites, only: [:create, :destroy]
