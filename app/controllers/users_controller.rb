@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       @questions = Question.where(user_id: params[:id])
       @check_list = "質問一覧"
     elsif @check_list == "お気に入り一覧"
-      @favorites = Favorite.where(user_id: params[:id]) if @check_list == "お気に入り一覧"
+      @favorites = Favorite.where(user_id: params[:id])
     else
       @question = Question.where(user_id: params[:id])
       @answers = Answer.where(user_id: params[:id])
