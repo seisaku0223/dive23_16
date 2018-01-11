@@ -6,5 +6,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @question = Question.where(user_id: params[:id])
+    @answers = Answer.where(user_id: params[:id])
   end
 end
