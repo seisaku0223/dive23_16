@@ -28,27 +28,59 @@
   padding-left: 62px;
 }
 
-.avatar_card {
-  width: 220px;
-  margin-right: 40px;
+.user_box {
+  min-width: 991px;
+  max-width: 1125px;
+  height: 287px ;
+  margin-left: 15px;
+  margin-right: 0;
+}
+
+.user_box .usershow_avatar{
+  width: 220px !important;
+  height: 280px;
+  padding: 17px;
   border: 1px solid #c8ccd0;
   border-radius: 4px;
-  text-align: center;
-  padding: 17px;
   box-shadow: inset 0 130px 0 #e7e8ea;
+  text-align: center;
+  vertical-align: top;
   float: left;
 }
 
-.usershow_boxprofile {
-  margin-top: 0px;
-  min-width: 220px;
-  max-width: 400px;
+.user_box .usershow_profile {
+  min-width: 400px;
+  height: 287px;
+  margin-left: 20px;
+  vertical-align: top;
+  word-break: break-all;
   float: left;
 }
 
-.usershow_boxcard {
-  margin-top: 30px;
-  color: #6a737c;
-  white-space: nowrap;
+.user_box .usershow_point {
+  width: 200px;
+  height: 287px;
+  vertical-align: top;
+  word-wrap: break-word;
+  float: right;
+}
+
+.btm_menu_box {
+  min-width: 850px;
+  max-width: 1125px;
+}
+
+.btm_menu_left {
+  position: relative;
+  margin-right: 0;
+  border: 1px solid transparent;
+  border-bottom-color: #ddd;
+  padding: 10px 15px;
   float: left;
+}
+
+.btm_menu_right {
+  min-width: 270px;
+  height: 42px;
+  margin-right: 0 !important;
 }
