@@ -1,7 +1,7 @@
 <div class="content clearfix">
-  <div class="mainbar">
+  <div class="mainbar clearfix">
     <%= render "subheader" %>
-    <% @questions.each do |question| %>
+    <% @questions_rank.each do |question| %>
       <div class="qlist-wrapper">
         <div class="question-summary clearfix">
           <div class="cp clearfix">
@@ -13,7 +13,7 @@
             </div>
             <div class="answered">
               <div class="mini-counts">
-                <span><%= question.answers.count %></span>
+                <span>11</span>
               </div>
               <div>回答</div>
             </div>
@@ -45,5 +45,5 @@
     <% end %>
     <%= paginate @questions %>
   </div>
-  <%= render  "sidebar" %>
+  <%= render "sidebar" %>
 </div>

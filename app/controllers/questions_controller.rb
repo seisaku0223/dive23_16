@@ -7,7 +7,6 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = Question.page(params[:page]).per(20)
-    @question_count = Question.count
   end
 
   # GET /questions/1
@@ -71,6 +70,11 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def ranking
+    @questions_rank = Question.rank
+    @questions = Question.page(params[:page]).per(20)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_question
@@ -81,4 +85,5 @@ class QuestionsController < ApplicationController
     def question_params
       params.require(:question).permit(:title, :content, :user_name, :tag_list)
     end
+
 end

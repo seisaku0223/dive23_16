@@ -25,7 +25,11 @@
   color: #242729;
   font-size: 18px;
   line-height: 2;
-  margin-bottom: 0;
+  display: inline;
+}
+
+.tabs {
+  float: right;
 }
 
 .question-summary {
@@ -114,28 +118,29 @@
   margin-bottom: 10px;
 }
 
-.statistics {
+.statistics, .vote-ranking {
   background-color: #fff7e3;
   padding: 15px 15px 10px 15px;
   border: 1px solid #E0DCBF;
   font-size: 14px;
+  margin-bottom: 20px;
 }
 
-.statistics table {
+.statistics table, .vote-ranking table {
   width: 200px;
 }
 
-.stats-value, .stats-label {
+.stats-value, .stats-label, .rank, .top-questions {
   padding: 5px 10px 5px 0;
   border-bottom: 1px solid #D5E5EC;
 }
 
-.stats-value {
+.stats-value, .rank {
   width: 55px;
   text-align: right;
 }
 
-.stats-label {
+.stats-label, .top-questions {
   color: #586E78;
 }
 
@@ -209,13 +214,12 @@
   float: left;
   width: 32px;
   height: 32px;
- }
+}
 
 .user-name {
   float: left;
   margin-left: 8px;
- }
-
+}
 
 .label-key {
   color: #9199a1;
