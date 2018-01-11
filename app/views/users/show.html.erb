@@ -1,67 +1,65 @@
-<div class="container">
-  <div class="row">
-    プロフィール
-  </div>
-
-  <div class="row avatar_card">
-    <%= profile_img(@user) %>
-    総貢献度
-  </div>
-    <div class="usershow_boxprofile">
-      <h2><%= @user.name %></h2>
-      profileというかコメント表記場所？ｆｓふぇｆせｆせｆせｆせｆせふぇｓｆせｆｓふぇｆｓふぇ
-    </div>
-    <div class="usershow_boxcard clearfix">
-      <p>回答：0</p>
-      <p>質問：0</p>
-      <p>udon</p>
-      <p>登録から3年</p>
-      <p>2018 回プロフィールが閲覧されました</p>
-      <p>前回のログイン 999時間前</p>
-    </div>
+<div class="user_subheader">
+  プロフィール
 </div>
 
-<div class="mainbar">
-  <div class="subheader">
-    <h1>質問一覧</h1>
+<div class="row user_box clearfix">
+  <div class="col-sm-6 col-xs-6 usershow_avatar">
+    <%= profile_img(@user) %>
+    <p><b>総貢献度</b></p>
   </div>
-  <% @question.each do |question| %>
-    <div class="qlist-wrapper">
-      <div class="question-summary clearfix">
-        <div class="cp clearfix">
-          <div class="votes">
-            <div class="mini-counts">
-              <span>1</span>
-            </div>
-            <div>票</div>
-          </div>
-          <div class="answered">
-            <div class="mini-counts">
-              <span>11</span>
-            </div>
-            <div>回答</div>
-          </div>
-          <div class="views">
-            <div class="mini-counts">
-              <span>23</span>
-            </div>
-            <div>閲覧数</div>
-          </div>
-        </div>
-        <div class="summary clearfix">
-          <h3>
-            <a class="question-hyperlink"><%= link_to "#{question.content}", question_path(question.id) %></a>
-          </h3>
-          <div class="tags">
-            <!--  タグエリア -->
-            <a href="#" class="post-tag">ruby</a>
-          </div>
-          <div class="questions-info">
-            <!-- 投稿日等 -->
-            <%= question.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
-          </div>
-        </div>
-      </div>
+  <div class="col-sm-6 col-xs-6 usershow_profile">
+    <h2><%= @user.name %>さん</h2>
+    <p><%= @user.profile %></p>
+    <% if @user.profile.nil? %>
+      プロフィールはまだ記載されておりません。
+    <% end %>
+  </div>
+  <div class="usershow_point">
+    <p>回答：1</p>
+    <p>質問：2</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row btm_menu_box">
+    <div class="col-sm-8 col-xs-3 btm_menu_left">
+      <%= @check_list %>
     </div>
+    <ul class="col-sm-4 col-xs-9 nav nav-tabs navbar-right btm_menu_right">
+      <% if @check_list == "質問一覧" %>
+        <li class="active"><a href="#">質問</a></li>
+      <% else %>
+        <li><%= link_to '質問', @user %></li>
+      <% end %>
+      <% if @check_list == "お気に入り一覧" %>
+        <li class="active"><a href="#">お気に入り</a></li>
+      <% else %>
+        <li><%= link_to 'お気に入り', user_path(@user.id, check_list: "お気に入り一覧") %></li>
+      <% end %>
+      <li><a href="#">回答</a></li>
+    </ul>
+  </div>
+
+  <% if @check_list == "質問一覧" %>
+    <% if @questions.present? %>
+      <div class="mainbar">
+        <% @questions.each do |question| %>
+          <%= render 'question_list', question: question %>
+        <% end %>
+      </div>
+    <% else %>
+      まだ質問していません。
+    <% end %>
+  <% elsif @check_list == "お気に入り一覧" %>
+    <% if @favorites.present? %>
+      <div class="mainbar">
+        <% @favorites.each do |favorite| %>
+          <% question = Question.find(favorite.question_id) %>
+          <%= render 'question_list', question: question %>
+        <% end %>
+      </div>
+    <% else %>
+      お気に入りの質問はありません
+    <% end %>
   <% end %>
 </div>
