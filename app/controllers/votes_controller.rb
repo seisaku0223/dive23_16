@@ -8,10 +8,14 @@ class VotesController < ApplicationController
       user_id: current_user.id
     )
 
-    if @vote.save
-      redirect_to question_path(@question)
+    if current_user.id != @question.user_id
+      if @vote.save
+        redirect_to question_path(@question)
+      else
+        redirect_to question_path(@question), notice: '同じ質問に２回投票することはできません'
+      end
     else
-      redirect_to question_path(@question), notice: '同じ質問に２回投票することはできません'
+      redirect_to question_path(@question), notice: '自分の質問には投票できません'
     end
   end
 
