@@ -36,7 +36,11 @@
       <% else %>
         <li><%= link_to 'お気に入り', user_path(@user.id, check_list: "お気に入り一覧") %></li>
       <% end %>
-      <li><a href="#">回答</a></li>
+      <% if @check_list == "回答一覧" %>
+        <li class="active"><a href="#">回答</a></li>
+      <% else %>
+        <li><%= link_to '回答', user_path(@user.id, check_list: "回答一覧") %></li>
+      <% end %>
     </ul>
   </div>
 
@@ -60,6 +64,16 @@
       </div>
     <% else %>
       お気に入りの質問はありません
+    <% end %>
+  <% elsif @check_list == "回答一覧" %>
+    <% if @answers.present? %>
+      <div class="mainbar">
+        <% @answers.each do |answer| %>
+          <%= render partial: 'answer_list', locals: { answer: answer, question: @question } %>
+        <% end %>
+      </div>
+    <% else %>
+      まだ回答はありません
     <% end %>
   <% end %>
 </div>
