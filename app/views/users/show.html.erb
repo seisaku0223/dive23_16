@@ -50,6 +50,7 @@
         <% @questions.each do |question| %>
           <%= render 'question_list', question: question %>
         <% end %>
+        <%= paginate @questions %>
       </div>
     <% else %>
       まだ質問していません。
@@ -61,6 +62,7 @@
           <% question = Question.find(favorite.question_id) %>
           <%= render 'question_list', question: question %>
         <% end %>
+      <%= paginate @favorites %>
       </div>
     <% else %>
       お気に入りの質問はありません
