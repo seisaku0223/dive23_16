@@ -14,6 +14,7 @@ class QuestionsController < ApplicationController
   def show
     @answer = @question.answers.build
     @answers = @question.answers
+    @favorite_count = Favorite.where(question_id: params[:id]).count
     if user_signed_in?
       @vote = current_user.votes.find_by(question_id: @question.id)
     else
