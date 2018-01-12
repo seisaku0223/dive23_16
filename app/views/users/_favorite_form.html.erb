@@ -1,12 +1,17 @@
 <div id="favorite_form_<%= question.id %>">
-  <% unless current_user.favoriteing?(question) %>
-    <%= form_for(current_user.favorites.build(question_id: question.id), remote: true) do |f| %>
-      <%= f.hidden_field :question_id %>
-      <%= f.submit "お気に入り", class: "btn btn-large btn-primary" %>
+  <% if question.user_id != current_user.id %>
+    <% unless current_user.favoriteing?(question) %>
+      <%= form_for(current_user.favorites.build(question_id: question.id), remote: true) do |f| %>
+        <%= f.hidden_field :question_id %>
+        <%= f.submit "☆", class: "star_color_off" %>
+      <% end %>
+    <% else %>
+      <%= form_for(current_user.favorites.find_by(question_id: question.id), html: { method: :delete }, remote: true) do |f| %>
+        <%= f.submit "★", class: "star_color_on" %>
+      <% end %>
     <% end %>
   <% else %>
-    <%= form_for(current_user.favorites.find_by(question_id: question.id), html: { method: :delete }, remote: true) do |f| %>
-      <%= f.submit "お気に入り解除", class: "btn btn-large" %>
-    <% end %>
+    <p class="star_self">★</p>
   <% end %>
+  <p class="favorite_counter"><%= question.favorites.count %></p>
 </div>

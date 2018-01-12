@@ -10,6 +10,7 @@ class FavoritesController < ApplicationController
 
   def destroy
     @question = Favorite.find(params[:id]).question
+    count_id = @question.id
     current_user.unfavorite!(@question)
     respond_with @question
   end

@@ -84,3 +84,35 @@
   height: 42px;
   margin-right: 0 !important;
 }
+
+.favorite_counter {
+  margin-left: 18px;
+}
+
+.star_color_on {
+  padding: 0px 8px;
+  margin-bottom: 0;
+  font-size: 24pt;
+  background    : transparent;
+  color         : #FFD83D;
+  border        : none;
+}
+
+.star_color_off {
+  padding: 0px 8px;
+  margin-bottom: 0;
+  font-size: 24pt;
+  background: transparent;
+  color: #000;
+  border: none;
+}
+
+.star_self {
+  padding: 0px 8px;
+  margin-bottom: 0;
+  font-size: 24pt;
+  background: transparent;
+  color: #E0E0E0;
+  border: none;
+  text-align: center;
+}
