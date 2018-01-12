@@ -85,9 +85,12 @@
   margin-right: 0 !important;
 }
 
+.favorite_counter {
+  padding-left: 18px;
+}
+
 .star_color_on {
   font-size: 24pt;
-  text-align    : center;
   background    : #FFF;
   color         : #FFD83D;
   border        : none;
@@ -95,7 +98,6 @@
 
 .star_color_off {
   font-size: 24pt;
-  text-align: center;
   background: #FFF;
   color: #000;
   border: none;

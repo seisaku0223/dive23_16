@@ -4,9 +4,6 @@
     <!-- <h1>質問タイトル</h1> questionコントローラーから取得 -->
     <h1><%= @question.title %></h1>
   </div>
-  <% if user_signed_in? %>
-    <%= render 'users/favorite_form', question: @question %>
-  <% end %>
   <div class="mainbar">
     <div class="question-area">
       <div class="edit-delete-btn">
@@ -22,6 +19,11 @@
           <span class="vote-count"><%= @question.votes.count %></span>
           <p>投票数</p>
           <%= link_to image_tag('/down-arrow.png'), question_votes_path(@question), method: :delete %>
+          <% if user_signed_in? %>
+            <div class="favorite_field">
+              <%= render 'users/favorite_form', question: @question %>
+            </div>
+          <% end %>
         </div>
         <div class="post-text">
           <p><%= @question.content %></p>
