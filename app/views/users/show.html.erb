@@ -7,7 +7,9 @@
 <div class="row user_box clearfix">
   <div class="col-sm-6 col-xs-6 usershow_avatar">
     <%= profile_img(@user) %>
-    <p><b>総貢献度</b></p>
+    <p><b>総貢献：<%= contribution_vote_count(@user) + @user.answers.count %></b></p>
+    <p><b>投票を貰った数：<%= contribution_vote_count(@user) %></b></p>
+    <p><b>回答した数：<%= @user.answers.count %></b></p>
   </div>
   <div class="col-sm-6 col-xs-6 usershow_profile">
     <h2><%= @user.name %>さん</h2>
@@ -17,8 +19,8 @@
     <% end %>
   </div>
   <div class="usershow_point">
-    <p>質問数：<%= @user.questions.count %></p>
-    <p>回答数：<%= @user.answers.count %></p>
+    <p>質問投稿数：<%= @user.questions.count %></p>
+    <p>回答を貰った数：<%= contribution_answer_count(@user) %></p>
     <p>登録日：<%= @user.created_at.strftime("%Y年%m月%d日") %></p>
   </div>
 </div>

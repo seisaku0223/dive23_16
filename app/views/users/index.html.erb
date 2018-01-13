@@ -10,7 +10,7 @@
         </div>
         <div class="userlist_boxcontent">
           <p><%= link_to user.name, user %></p>
-          <p>貢献度</p>
+          <p>総貢献度 <%= contribution_vote_count(user) + user.answers.count %></p>
         </div>
       </div>
     <% end %>
