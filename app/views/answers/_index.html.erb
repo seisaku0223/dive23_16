@@ -1,6 +1,6 @@
 <ul>
   <h3><%= question.answers.count %>件の回答</h3>
-  <% answers.each do |answer| %>
+  <% answers.order(:created_at).reverse_order.each do |answer| %>
     <% unless answer.id.nil? %>
       <div class="answer-summary clearfix">
         <div class="clearfix">
