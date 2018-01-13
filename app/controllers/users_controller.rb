@@ -13,7 +13,8 @@ class UsersController < ApplicationController
       @check_list = "質問一覧"
     elsif @check_list == "お気に入り一覧"
       favorites_data = Favorite.where(user_id: params[:id])
-      @favorites = favorites_data.page(params[:page]).per(20)
+      favorites_data_order = favorites_data.order(:created_at).reverse_order
+      @favorites = favorites_data_order.page(params[:page]).per(20)
     else
       @question = Question.where(user_id: params[:id])
       @answers = Answer.where(user_id: params[:id])
