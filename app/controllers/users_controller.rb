@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @check_list = params[:check_list].presence
+    
     if @check_list.blank? || @check_list == "質問一覧"
       questions_data = Question.where(user_id: params[:id])
       @questions = questions_data.page(params[:page]).per(20)
