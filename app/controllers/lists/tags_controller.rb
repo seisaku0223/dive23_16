@@ -1,7 +1,7 @@
 class Lists::TagsController < ApplicationController
   def index
     @tags = ActsAsTaggableOn::Tag.most_used(25)
-    @tags = Question.all_tags
+    # @tags = Question.all_tags
   end
 
   def show
