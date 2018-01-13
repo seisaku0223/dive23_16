@@ -28,6 +28,19 @@
   padding-left: 62px;
 }
 
+.top_menu_box {
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+.top_menu_box > .nav-tabs > li > a {
+  border-radius: 0;
+}
+
+.top_menu_border {
+  border-top: 2px solid #f69c55;
+}
+
 .user_box {
   min-width: 991px;
   max-width: 1125px;
