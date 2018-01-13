@@ -19,6 +19,7 @@ gem 'rails_12factor', group: :production
 gem 'acts-as-taggable-on', '~> 4.0'
 gem 'kaminari-bootstrap' #ページネーションをBootstrapに対応させるため追加
 gem 'jquery-ui-rails'
+gem 'gon'
 
 group :development, :test do
   gem 'byebug'
