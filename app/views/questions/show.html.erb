@@ -44,7 +44,9 @@
         <%= render partial: 'answers/index', locals: { answers: @answers, question: @question } %>
       </div>
       <% if user_signed_in? %>
+      <div id="answer_form">
         <%= render partial: 'answers/form', locals: { answer: @answer, question: @question } %>
+      </div>
       <% end %>
     </div>
   </div>

@@ -9,7 +9,9 @@ class AnswersController < ApplicationController
         format.html { redirect_to question_path(@question) }
         format.js{ render :index }
       else
-        format.html { render :new }
+        #format.html { render partial: "form", locals: { answer: @answer, question: @question } }
+        format.js{ render :form }
+        #format.html { render :new }
       end
     end
   end
