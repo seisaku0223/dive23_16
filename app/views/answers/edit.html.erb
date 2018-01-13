@@ -1,17 +1,19 @@
-<div class="container">
-    <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
-      <% if @answer.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= @answer.errors.count %>件のエラーがあります。</h2>
-
-          <ul>
-          <% @answer.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-          </ul>
-        </div>
+<%= form_for([@question,@answer]) do |f| %>
+  <% if @answer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @answer.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @answer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
       <% end %>
-
-      <%= render partial: 'answers/form', locals: { answer: @answer, question: @question } %>
+      </ul>
     </div>
+  <% end %>
+  <%= f.hidden_field :question_id %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "回答内容", class: "form-control"  %>
   </div>
+  <div class="actions">
+    <%= f.submit'回答する', class: 'btn btn-primary btn-sm' %>
+  </div>
+<% end %>
