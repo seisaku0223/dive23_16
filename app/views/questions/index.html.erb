@@ -34,7 +34,7 @@
             </h3>
             <div class="tags">
               <!--  タグエリア -->
-              <a href="#" class="post-tag">ruby</a>
+            <%= render partial: 'tag_list', locals: { tags: question.tags }%>
             </div>
             <div class="questions-info">
               <!-- 投稿日等 -->
